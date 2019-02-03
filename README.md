@@ -10,7 +10,7 @@ npm install ipswme
 
 ## Docs
 
-[Click Here](docs)
+[Click Here](https://1conan.github.io/node-ipswme)
 
 ## License
 
