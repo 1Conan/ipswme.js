@@ -1,5 +1,7 @@
-import { IDevice } from './interface/Device';
 import axios from 'axios';
+
+import { IDevice } from './interface/Device';
+import { IFirmware } from './interface/Firmware';
 
 /**
  * @hidden
@@ -22,7 +24,7 @@ export async function getDevice(deviceId: string): Promise<IDevice> {
   try {
     const req = await request.get(`/v4/device/${deviceId}`);
 
-    if (req.status === 404) throw new Error('Device Not Found');
+    if (req.status === 404) throw new Error('Not Found');
 
     if (req.status === 200) return req.data;
 
@@ -45,6 +47,47 @@ export async function getDevices(): Promise<IDevice[]> {
 
   try {
     const req = await request.get('/v4/devices');
+
+    if (req.status === 200) return req.data;
+  } catch (e) {
+    throw e;
+  }
+  throw new Error('Unknown Error');
+}
+
+/**
+ * Get the IPSW download url for a device ID and Build ID.
+ * Link redirects to Apple's server.
+ *
+ * @param deviceId - An iDevice Device Identifier.
+ * @param buildid - iOS Build Number
+ */
+export async function getIPSWLink(deviceId: string, buildid: string): Promise<string> {
+  return `https://api.ipsw.me/v4/ipsw/download/${deviceId}/${buildid}`;
+}
+
+/**
+ * Get IPSW Information for a device ID and Build ID.
+ *
+ * @param deviceId
+ * @param buildid
+ */
+export async function getIPSWInfo(deviceId: string, buildid: string): Promise<IFirmware> {
+  try {
+    const req = await request.get(`/v4/ipsw/${deviceId}/${buildid}`);
+    if (req.status === 404) throw new Error('Not Found');
+
+    if (req.status === 200) return req.data;
+  } catch (e) {
+    throw e;
+  }
+  throw new Error('Unknown Error');
+}
+
+export async function getIPSWListForVersion(version: string): Promise<IFirmware[]> {
+  try {
+    const req = await request.get(`/v4/ipsw/${version}`);
+    if (req.status === 404) throw new Error('Not Found');
 
     if (req.status === 200) return req.data;
   } catch (e) {
