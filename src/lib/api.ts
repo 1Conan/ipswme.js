@@ -84,6 +84,11 @@ export async function getIPSWInfo(deviceId: string, buildid: string): Promise<IF
   throw new Error('Unknown Error');
 }
 
+/**
+ * Gives list of all IPSW for the version
+ *
+ * @param version - iOS Version
+ */
 export async function getIPSWListForVersion(version: string): Promise<IFirmware[]> {
   try {
     const req = await request.get(`/v4/ipsw/${version}`);
