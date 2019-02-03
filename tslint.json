@@ -3,6 +3,11 @@
     "extends": [
         "tslint-config-airbnb"
     ],
+    "linterOptions": {
+        "exclude": [
+            "node_modules/**"
+        ]
+    },
     "jsRules": {},
     "rules": {},
     "rulesDirectory": []
