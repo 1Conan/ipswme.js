@@ -10,7 +10,8 @@ const request = axios.create({
 });
 
 /**
- * Get device and firmware information for a specific device Id.
+ * Get device and firmware information for a specific device ID.
+ *
  * @param deviceId - An iDevice Device Identifier.
  * @example
  * ```
@@ -34,6 +35,7 @@ export async function getDevice(deviceId: string): Promise<IDevice> {
 
 /**
  * Get list of devices except for firmware information.
+ *
  * @example
  * ```
  * getDevices().then(console.log)
