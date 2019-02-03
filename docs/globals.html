@@ -79,6 +79,9 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function"><a href="globals.html#getdevice" class="tsd-kind-icon">get<wbr>Device</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#getdevices" class="tsd-kind-icon">get<wbr>Devices</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#getipswinfo" class="tsd-kind-icon">getIPSWInfo</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#getipswlink" class="tsd-kind-icon">getIPSWLink</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#getipswlistforversion" class="tsd-kind-icon">getIPSWList<wbr>For<wbr>Version</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,7 +99,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-ipswme/blob/273b4ae/src/lib/api.ts#L22">lib/api.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-ipswme/blob/79ef96a/src/lib/api.ts#L23">lib/api.ts:23</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -131,7 +134,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/1Conan/node-ipswme/blob/273b4ae/src/lib/api.ts#L45">lib/api.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/1Conan/node-ipswme/blob/79ef96a/src/lib/api.ts#L46">lib/api.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -144,6 +147,108 @@
 								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/idevice.html" class="tsd-signature-type">IDevice</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="getipswinfo" class="tsd-anchor"></a>
+					<h3>getIPSWInfo</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">getIPSWInfo<span class="tsd-signature-symbol">(</span>deviceId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, buildid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/ifirmware.html" class="tsd-signature-type">IFirmware</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/1Conan/node-ipswme/blob/79ef96a/src/lib/api.ts#L75">lib/api.ts:75</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get IPSW Information for a device ID and Build ID.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>deviceId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>buildid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/ifirmware.html" class="tsd-signature-type">IFirmware</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="getipswlink" class="tsd-anchor"></a>
+					<h3>getIPSWLink</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">getIPSWLink<span class="tsd-signature-symbol">(</span>deviceId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, buildid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/1Conan/node-ipswme/blob/79ef96a/src/lib/api.ts#L65">lib/api.ts:65</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the IPSW download url for a device ID and Build ID.
+									Link redirects to Apple&#39;s server.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>deviceId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An iDevice Device Identifier.</p>
+									</div>
+								</li>
+								<li>
+									<h5>buildid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>iOS Build Number</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="getipswlistforversion" class="tsd-anchor"></a>
+					<h3>getIPSWList<wbr>For<wbr>Version</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">getIPSWList<wbr>For<wbr>Version<span class="tsd-signature-symbol">(</span>version<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/ifirmware.html" class="tsd-signature-type">IFirmware</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/1Conan/node-ipswme/blob/79ef96a/src/lib/api.ts#L92">lib/api.ts:92</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gives list of all IPSW for the version</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>version: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>iOS Version</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/ifirmware.html" class="tsd-signature-type">IFirmware</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -170,6 +275,15 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#getdevices" class="tsd-kind-icon">get<wbr>Devices</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getipswinfo" class="tsd-kind-icon">getIPSWInfo</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getipswlink" class="tsd-kind-icon">getIPSWLink</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getipswlistforversion" class="tsd-kind-icon">getIPSWList<wbr>For<wbr>Version</a>
 					</li>
 				</ul>
 			</nav>
