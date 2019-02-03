@@ -1,0 +1,28 @@
+{
+  "name": "ipswme",
+  "version": "2.0.0",
+  "description": "API Wrapper for ipsw.me",
+  "main": "dist/index.js",
+  "scripts": {
+    "doc": "typedoc --mode file --out docs src",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1Conan/node-ipswme.git"
+  },
+  "author": "1Conan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1Conan/node-ipswme/issues"
+  },
+  "homepage": "https://github.com/1Conan/node-ipswme#readme",
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.3.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
