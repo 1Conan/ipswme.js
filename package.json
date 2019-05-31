@@ -1,6 +1,6 @@
 {
   "name": "ipswme",
-  "version": "2.1.0",
+  "version": "2.2.2",
   "description": "API Wrapper for ipsw.me",
   "main": "dist/index.js",
   "scripts": {
@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/1Conan/node-ipswme#readme",
   "devDependencies": {
-    "tslint": "^5.12.1",
+    "tslint": "^5.17.0",
     "tslint-config-airbnb": "^5.11.1",
     "typedoc": "^0.14.2",
-    "typescript": "^3.3.1"
+    "typescript": "^3.5.1"
   },
   "dependencies": {
     "axios": "^0.18.0"
