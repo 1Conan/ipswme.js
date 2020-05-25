@@ -1,6 +1,6 @@
 {
   "name": "ipswme",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "API Wrapper for ipsw.me",
   "main": "dist/index.js",
   "scripts": {
