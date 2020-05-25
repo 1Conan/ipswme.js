@@ -1,15 +1,11 @@
-import axios from 'axios';
-
+import fetch from 'cross-fetch';
 import { IDevice } from './interface/Device';
 import { IFirmware } from './interface/Firmware';
 
 /**
  * @hidden
  */
-const request = axios.create({
-  baseURL: 'https://api.ipsw.me',
-  headers: { 'User-Agent': 'node-ipswme/2.0' },
-});
+const baseUrl = 'https://api.ipsw.me';
 
 /**
  * Get device and firmware information for a specific device ID.
@@ -21,18 +17,7 @@ const request = axios.create({
  * ```
  */
 export async function getDevice(deviceId: string): Promise<IDevice> {
-  try {
-    const req = await request.get(`/v4/device/${deviceId}`);
-
-    if (req.status === 404) throw new Error('Not Found');
-
-    if (req.status === 200) return req.data;
-
-  } catch (e) {
-    throw e;
-  }
-  throw new Error('Unknown Error');
-
+  return fetch(`${baseUrl}/v4/device/${deviceId}`).then(req => req.json());
 }
 
 /**
@@ -44,15 +29,7 @@ export async function getDevice(deviceId: string): Promise<IDevice> {
  * ```
  */
 export async function getDevices(): Promise<IDevice[]> {
-
-  try {
-    const req = await request.get('/v4/devices');
-
-    if (req.status === 200) return req.data;
-  } catch (e) {
-    throw e;
-  }
-  throw new Error('Unknown Error');
+  return fetch(`${baseUrl}/v4/devices`).then(req => req.json());
 }
 
 /**
@@ -73,15 +50,7 @@ export async function getIPSWLink(deviceId: string, buildid: string): Promise<st
  * @param buildid
  */
 export async function getIPSWInfo(deviceId: string, buildid: string): Promise<IFirmware> {
-  try {
-    const req = await request.get(`/v4/ipsw/${deviceId}/${buildid}`);
-    if (req.status === 404) throw new Error('Not Found');
-
-    if (req.status === 200) return req.data;
-  } catch (e) {
-    throw e;
-  }
-  throw new Error('Unknown Error');
+  return fetch(`${baseUrl}/v4/ipsw/${deviceId}/${buildid}`).then(req => req.json());
 }
 
 /**
@@ -90,13 +59,5 @@ export async function getIPSWInfo(deviceId: string, buildid: string): Promise<IF
  * @param version - iOS Version
  */
 export async function getIPSWListForVersion(version: string): Promise<IFirmware[]> {
-  try {
-    const req = await request.get(`/v4/ipsw/${version}`);
-    if (req.status === 404) throw new Error('Not Found');
-
-    if (req.status === 200) return req.data;
-  } catch (e) {
-    throw e;
-  }
-  throw new Error('Unknown Error');
+  return fetch(`${baseUrl}/v4/ipsw/${version}`).then(req => req.json());
 }
