@@ -1,5 +1,6 @@
-export * from './lib/api';
+import * as v4 from './v4';
 
-// Interfaces
-export { IDevice } from './lib/interface/Device';
-export { IFirmware } from './lib/interface/Firmware';
+export default v4;
+export {
+  v4,
+};

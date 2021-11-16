@@ -1,4 +1,4 @@
-# node-ipswme
+# ipsw.me
 
 > An API wrapper for api.ipsw.me
 

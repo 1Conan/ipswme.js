@@ -1,29 +1,33 @@
 {
   "name": "ipswme",
-  "version": "2.2.4",
+  "version": "4.0.0",
   "description": "API Wrapper for ipsw.me",
   "main": "dist/index.js",
   "scripts": {
-    "doc": "typedoc --mode file --out docs src",
-    "build": "tsc"
+    "lint": "eslint --ext ts src",
+    "build": "tsc",
+    "prepare": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/1Conan/node-ipswme.git"
+    "url": "git+https://github.com/1Conan/ipswme.js.git"
   },
   "author": "1Conan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/1Conan/node-ipswme/issues"
+    "url": "https://github.com/1Conan/ipswme.js/issues"
   },
-  "homepage": "https://github.com/1Conan/node-ipswme#readme",
-  "devDependencies": {
-    "tslint": "^5.20.1",
-    "tslint-config-airbnb": "^5.11.2",
-    "typedoc": "^0.14.2",
-    "typescript": "^3.9.3"
-  },
+  "homepage": "https://github.com/1Conan/ipswme.js#readme",
   "dependencies": {
-    "cross-fetch": "^3.0.4"
+    "cross-fetch": "^3.1.4",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.1",
+    "eslint-plugin-import": "^2.22.1"
   }
 }

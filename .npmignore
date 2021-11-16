@@ -1,7 +1,6 @@
 src/
-docs/
-tsconfig.json
-tslint.json
+.eslintrc
 .gitignore
 pnpm-lock.yaml
 README.md
+tsconfig.json
